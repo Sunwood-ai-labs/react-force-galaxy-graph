@@ -1,18 +1,28 @@
-![](docs/header.png)
+<p align="center">
+  <img src="docs/header.png" alt="React Force Galaxy Graph">
+</p>
 
-# react-force-galaxy-graph
+<h1 align="center">🌌 react-force-galaxy-graph</h1>
 
+<p align="center">
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React">
+  <img src="https://img.shields.io/badge/ThreeJs-black?style=for-the-badge&logo=three.js&logoColor=white" alt="Three.js">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
+</p>
+
+<p align="center">
 メモリデータとLes Misérablesデータを表示するグラフビジュアライゼーション
+</p>
 
-## 機能
+## ✨ 機能
 
-- メモリデータとLes Misérablesデータの視覚化
-- 3D力学モデルによるインタラクティブな表示
-- ブルームエフェクトを使用した美しい視覚表現
-- データのダウンロード機能
-- メモリデータの自動変換機能
+- 🔍 メモリデータとLes Misérablesデータの視覚化
+- 🎮 3D力学モデルによるインタラクティブな表示
+- 🎨 ブルームエフェクトを使用した美しい視覚表現
+- 💾 データのダウンロード機能
+- 🔄 メモリデータの自動変換機能
 
-## 始め方
+## 🚀 始め方
 
 1. リポジトリをクローン:
    ```bash
@@ -31,11 +41,16 @@
 
 3. ブラウザで`http://localhost:5000`（またはサーバーが表示するURL）にアクセス
 
-## データ変換
+## 🔄 データ変換
 
-memory.json形式のデータをmiserables.json形式に変換する処理はアプリケーション内に実装されています。アプリケーションは自動的にmemory.jsonを読み込み、グラフ表示用のフォーマットに変換します。
+MCPサーバーから生成されるmemory.jsonのエンティティと関係性のデータを、グラフ表示用のフォーマット（miserables.json形式）に変換する処理がアプリケーション内に実装されています。
 
-## アプリケーション構造
+変換の流れ：
+- エンティティ → グラフのノードに変換
+- 関係性 → グラフのリンクに変換
+- 自動的にメモリデータを読み込み、インタラクティブな3Dグラフとして表示
+
+## 📁 アプリケーション構造
 
 - `datasets/`: データファイル
   - `memory.json`: 元のメモリデータ
@@ -47,7 +62,7 @@ memory.json形式のデータをmiserables.json形式に変換する処理はア
   - `styles/app.css`: スタイルシート
   - `scripts/`: 変換スクリプト（Node.js環境用）
 
-## アーキテクチャ
+## 🏗 アーキテクチャ
 
 アプリケーションは単一ファイルのReactアプリケーションとして設計されています。主要なコンポーネントは:
 
