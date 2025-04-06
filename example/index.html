@@ -1,0 +1,48 @@
+<head>
+  <style> body { margin: 0; } </style>
+
+  <script type="importmap">{ "imports": {
+    "react": "https://esm.sh/react",
+    "react-dom": "https://esm.sh/react-dom/client"
+  }}</script>
+
+<!--  <script type="module">import * as React from 'react'; window.React = React;</script>-->
+<!--  <script src="../../src/packages/react-force-graph-3d/dist/react-force-graph-3d.js" defer></script>-->
+</head>
+
+<body>
+  <div id="graph"></div>
+
+  <script src="//cdn.jsdelivr.net/npm/@babel/standalone"></script>
+  <script type="text/jsx" data-type="module">
+    import ForceGraph3D from 'https://esm.sh/react-force-graph-3d?external=react';
+    import React, { useRef, useEffect } from 'react';
+    import { createRoot } from 'react-dom';
+    import { UnrealBloomPass } from 'https://esm.sh/three/examples/jsm/postprocessing/UnrealBloomPass.js';
+
+    fetch('../datasets/miserables.json').then(res => res.json()).then(data => {
+      const FocusGraph = () => {
+        const fgRef = useRef();
+
+        useEffect(() => {
+          const bloomPass = new UnrealBloomPass();
+          bloomPass.strength = 4;
+          bloomPass.radius = 1;
+          bloomPass.threshold = 0;
+          fgRef.current.postProcessingComposer().addPass(bloomPass);
+        }, []);
+
+        return <ForceGraph3D
+          ref={fgRef}
+          backgroundColor="#000003"
+          graphData={data}
+          nodeLabel="id"
+          nodeAutoColorBy="group"
+        />;
+      };
+
+      createRoot(document.getElementById('graph'))
+        .render(<FocusGraph/>);
+    });
+  </script>
+</body>
