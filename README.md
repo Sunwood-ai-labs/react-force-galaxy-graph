@@ -1,40 +1,62 @@
+![](docs/header.png)
+
 # react-force-galaxy-graph
 
 メモリデータとLes Misérablesデータを表示するグラフビジュアライゼーション
 
+## 機能
+
+- メモリデータとLes Misérablesデータの視覚化
+- 3D力学モデルによるインタラクティブな表示
+- ブルームエフェクトを使用した美しい視覚表現
+- データのダウンロード機能
+- メモリデータの自動変換機能
+
+## 始め方
+
+1. リポジトリをクローン:
+   ```bash
+   git clone https://github.com/yourusername/react-force-galaxy-graph.git
+   cd react-force-galaxy-graph
+   ```
+
+2. Webサーバーでexampleディレクトリを起動:
+   ```bash
+   cd example
+   # お好みのWebサーバーを使用
+   npx serve
+   # または
+   python -m http.server
+   ```
+
+3. ブラウザで`http://localhost:5000`（またはサーバーが表示するURL）にアクセス
+
 ## データ変換
 
-memory.json形式のデータをmiserables.json形式に変換する方法は以下の3通りです：
+memory.json形式のデータをmiserables.json形式に変換する処理はアプリケーション内に実装されています。アプリケーションは自動的にmemory.jsonを読み込み、グラフ表示用のフォーマットに変換します。
 
-### 1. アプリケーション実行時の自動変換
+## アプリケーション構造
 
-アプリケーション実行時に自動的にmemory.jsonを変換し、グラフ表示します。
-エラーが発生した場合は自動的にmiserables.jsonにフォールバックします。
+- `datasets/`: データファイル
+  - `memory.json`: 元のメモリデータ
+  - `miserables.json`: Les Misérablesデータ
 
-### 2. スクリプトによる手動変換
+- `example/`: アプリケーション
+  - `app.jsx`: メインアプリケーションコード（React）
+  - `index.html`: HTMLエントリポイント
+  - `styles/app.css`: スタイルシート
+  - `scripts/`: 変換スクリプト（Node.js環境用）
 
-```bash
-node example/scripts/convert.js
-```
+## アーキテクチャ
 
-memory.jsonを読み込み、memory.miserables.jsonとして出力します。
+アプリケーションは単一ファイルのReactアプリケーションとして設計されています。主要なコンポーネントは:
 
-### 3. ユーティリティ関数としての利用
+1. **App**: メインのアプリケーションコンテナ
+2. **Graph**: 3Dフォースグラフの描画を担当
+3. **ControlPanel**: データセット選択とダウンロード機能を提供
 
-```javascript
-import { convertMemoryToMiserables } from './utils/dataConverter.js';
-
-const memoryData = `{"type":"entity",...}`;
-const converted = convertMemoryToMiserables(memoryData);
-```
-
-## ファイル構造
-
-- `datasets/`
-  - `memory.json` - 元のメモリデータ
-  - `miserables.json` - Les Misérablesデータ
-  - `memory.miserables.json` - 変換後のメモリデータ
-- `example/`
-  - `utils/dataConverter.js` - 変換ユーティリティ
-  - `scripts/convert.js` - 変換スクリプト
-  - `app.jsx` - メインアプリケーション
+データは以下のように処理されます:
+1. JSONデータの読み込み（メモリデータまたはLes Misérablesデータ）
+2. データの変換（必要に応じて）
+3. 3Dフォースグラフによる視覚化
+4. ブルームエフェクトなどの視覚的な強化
