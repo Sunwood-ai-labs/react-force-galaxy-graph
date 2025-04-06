@@ -1,0 +1,14 @@
+{"type":"entity","name":"昼食メニュー_2025_04_07","entityType":"meal_plan","observations":["提案日時: 2025年4月7日 昼食","メインディッシュ: 鶏むね肉とアボカドのサラダボウル（タンパク質と良質な脂質）","トッピング: ゆで卵、プチトマト、水菜（ビタミン類と彩り）","付け合わせ: 雑穀米（食物繊維とミネラル）","汁物: コーンスープ（具だくさん）","デザート: みかん（ビタミンC補給）","特徴: 低カロリー、高タンパク、野菜たっぷり、準備時間15分、冷やして持ち運び可能"]}
+{"type":"entity","name":"朝食メニュー_2025_04_07","entityType":"meal_plan","observations":["提案日時: 2025年4月7日 朝食","メインディッシュ: オムレツ（卵2個使用、ほうれん草とチーズ入り）","付け合わせ1: 全粒粉トースト（食物繊維）","付け合わせ2: グリーンサラダ（レタス、キュウリ、プチトマト）","飲み物1: ヨーグルトスムージー（バナナ、ブルーベリー）","飲み物2: 緑茶","特徴: 高タンパク、食物繊維豊富、ビタミン・ミネラル補給、準備時間20分"]}
+{"type":"entity","name":"夕食メニュー_2025_04_06","entityType":"meal_plan","observations":["提案日時: 2025年4月6日 夕食","メインディッシュ: サバの味噌煮（タンパク質とDHA豊富）","副菜1: ほうれん草のおひたし（鉄分と食物繊維）","副菜2: きんぴらごぼう（食物繊維とミネラル）","主食: 玄米ご飯","汁物: お味噌汁（わかめと豆腐）","特徴: 和食中心、栄養バランス良好、調理時間約30分、季節の食材活用"]}
+{"type":"entity","name":"VSCode Settings","entityType":"Configuration","observations":["Visual Studio Codeのユーザー設定ファイル","テーマ、フォント、ターミナル、バックグラウンド画像など多岐にわたる設定を含む"]}
+{"type":"entity","name":"Theme Settings","entityType":"Configuration","observations":["カラーテーマ: Tokyo Hack","アイコンテーマ: catppuccin-perfect-dracula","フォント: HackGen"]}
+{"type":"entity","name":"Background Settings","entityType":"Configuration","observations":["フルスクリーン背景画像を4枚設定、opacity: 0.25","パネル背景に猫魔法シリーズの画像5枚を設定、opacity: 0.5","サイドバーに城の画像を設定、opacity: 0.3"]}
+{"type":"entity","name":"Terminal Settings","entityType":"Configuration","observations":["デフォルトプロファイル: PowerShell","画像表示有効","複数のSSHリモートプラットフォーム設定を含む"]}
+{"type":"entity","name":"Development Settings","entityType":"Configuration","observations":["Git自動フェッチ有効","Gitスマートコミット有効","ファイルネスティングパターン設定あり","MCPサーバー設定あり"]}
+{"type":"relation","from":"VSCode Settings","to":"Theme Settings","relationType":"contains"}
+{"type":"relation","from":"VSCode Settings","to":"Background Settings","relationType":"contains"}
+{"type":"relation","from":"VSCode Settings","to":"Terminal Settings","relationType":"contains"}
+{"type":"relation","from":"VSCode Settings","to":"Development Settings","relationType":"contains"}
+{"type":"relation","from":"Theme Settings","to":"Background Settings","relationType":"complements"}
+{"type":"relation","from":"Development Settings","to":"Terminal Settings","relationType":"uses"}
