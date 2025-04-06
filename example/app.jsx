@@ -146,7 +146,7 @@ function App() {
     setIsLoading(true);
     try {
       if (datasetName === 'memory') {
-        const response = await fetch("../datasets/memory.json");
+        const response = await fetch("../server-memory/memory.json");
         const text = await response.text();
         setRawData(text);  // 生データを保存
         const data = convertMemoryToGraph(text);
