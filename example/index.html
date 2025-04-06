@@ -1,10 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
 <head>
-  <style> body { margin: 0; } </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Force Galaxy Graph</title>
+  <link rel="stylesheet" href="styles/app.css">
 
-  <script type="importmap">{ "imports": {
-    "react": "https://esm.sh/react",
-    "react-dom": "https://esm.sh/react-dom/client"
-  }}</script>
+  <script type="importmap">
+  {
+    "imports": {
+      "react": "https://esm.sh/react",
+      "react-dom/client": "https://esm.sh/react-dom/client",
+      "react-force-graph-3d": "https://esm.sh/react-force-graph-3d?external=react",
+      "three/examples/jsm/postprocessing/UnrealBloomPass.js": "https://esm.sh/three/examples/jsm/postprocessing/UnrealBloomPass.js"
+    }
+  }
+  </script>
 </head>
 
 <body>
@@ -13,3 +24,4 @@
   <script src="//cdn.jsdelivr.net/npm/@babel/standalone"></script>
   <script type="text/jsx" data-type="module" src="app.jsx"></script>
 </body>
+</html>
