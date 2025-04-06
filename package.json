@@ -1,0 +1,18 @@
+{
+  "name": "react-force-galaxy-graph",
+  "version": "1.0.0",
+  "description": "Force-directed galaxy graph visualization for memory data",
+  "scripts": {
+    "start": "serve example",
+    "dev": "serve example"
+  },
+  "dependencies": {
+    "serve": "^14.2.1",
+    "@modelcontextprotocol/sdk": "latest",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "three": "^0.160.0"
+  },
+  "author": "Maki <sunwood.ai.labs@gmail.com>",
+  "license": "MIT"
+}
